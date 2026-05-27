@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية اللغات | منصتك للتميز</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="text-2xl font-bold text-indigo-600 tracking-wide flex items-center gap-2">
+                <span>🌐</span> أكاديمية اللغات
+            </a>
+            <nav>
+                <button onclick="showPage('home')" class="text-gray-600 hover:text-indigo-600 font-medium transition">الرئيسية</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <div id="home-page" class="page-section">
+            <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 text-center px-4 shadow-inner">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">أكاديمية اللغات - ابدأ رحلتك في تعلم اللغات بسهولة</h1>
+                    <p class="text-lg md:text-xl text-indigo-100 font-light">منصة تفاعلية مريحة ومناسبة للكبار والصغار لتطوير مهاراتك اللغوية خطوة بخطوة.</p>
+                </div>
+            </section>
+
+            <section class="container mx-auto px-4 py-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-700">اختر اللغة التي تريد تعلمها</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col justify-between">
+                        <div class="p-6 text-center">
+                            <div class="text-6xl mb-4 select-none">🇬🇧</div>
+                            <h3 class="text-xl font-bold mb-2">اللغة الإنجليزية</h3>
+                            <p class="text-gray-500 text-sm">تعلم لغة التواصل العالمي الأولى بكل سهولة.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openLanguage('english')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl transition duration-200">ابدأ التعلم</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col justify-between">
+                        <div class="p-6 text-center">
+                            <div class="text-6xl mb-4 select-none">🇸🇦</div>
+                            <h3 class="text-xl font-bold mb-2">اللغة العربية</h3>
+                            <p class="text-gray-500 text-sm">اكتشف جمال وقواعد لغة الضاد من الصفر.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openLanguage('arabic')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl transition duration-200">ابدأ التعلم</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col justify-between">
+                        <div class="p-6 text-center">
+                            <div class="text-6xl mb-4 select-none">🇮🇹</div>
+                            <h3 class="text-xl font-bold mb-2">اللغة الإيطالية</h3>
+                            <p class="text-gray-500 text-sm">تحدث بلغة الفن، الموسيقى، والجمال الإيطالي.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openLanguage('italian')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl transition duration-200">ابدأ التعلم</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col justify-between">
+                        <div class="p-6 text-center">
+                            <div class="text-6xl mb-4 select-none">🇫🇷</div>
+                            <h3 class="text-xl font-bold mb-2">اللغة الفرنسية</h3>
+                            <p class="text-gray-500 text-sm">تعلم لغة الثقافة والرومانسية بطرق تفاعلية.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openLanguage('french')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl transition duration-200">ابدأ التعلم</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="language-page" class="page-section hidden">
+            <div class="bg-white border-b border-gray-200 py-6 shadow-sm">
+                <div class="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <span id="lang-flag" class="text-4xl"></span>
+                        <h2 id="lang-title" class="text-2xl font-bold text-gray-800"></h2>
+                    </div>
+                    <button onclick="showPage('home')" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 border border-indigo-200 rounded-xl px-4 py-2 hover:bg-indigo-50 transition">
+                        ← العودة للرئيسية
+                    </button>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 mt-8">
+                <div class="flex border-b border-gray-200 bg-white rounded-xl shadow-sm p-2 gap-2">
+                    <button onclick="switchTab('lessons')" id="tab-btn-lessons" class="flex-1 py-3 text-center rounded-lg font-bold text-sm sm:text-base transition-all bg-indigo-600 text-white shadow-sm">
+                        📚 شرح المادة
+                    </button>
+                    <button onclick="switchTab('videos')" id="tab-btn-videos" class="flex-1 py-3 text-center rounded-lg font-bold text-sm sm:text-base text-gray-600 hover:bg-gray-50 transition-all">
+                        🎥 فيديوهات الشرح
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-btn-quiz" class="flex-1 py-3 text-center rounded-lg font-bold text-sm sm:text-base text-gray-600 hover:bg-gray-50 transition-all">
+                        📝 امتحانات وأسئلة
+                    </button>
+                </div>
+
+                <div class="mt-8 mb-16">
+                    
+                    <div id="tab-lessons" class="tab-content active space-y-12">
+                        </div>
+
+                    <div id="tab-videos" class="tab-content space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="videos-container">
+                            </div>
+                    </div>
+
+                    <div id="tab-quiz" class="tab-content bg-white p-6 md:p-8 rounded-2xl shadow-sm max-w-3xl mx-auto border border-gray-100">
+                        <div id="quiz-container">
+                            </div>
+                        <div id="quiz-result" class="hidden text-center py-6">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center border-t border-gray-800 text-sm">
+        <p>© 2026 أكاديمية اللغات. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // قاعدة البيانات التجريبية لتغذية الموقع فوراً بالمحتوى المطلوب
+        const languageData = {
+            english: {
+                title: "اللغة الإنجليزية",
+                flag: "🇬🇧",
+                levels: [
+                    { id: "A1", title: "المستوى المبتدئ (A1) - التعريف بالنفس", text: "في هذا الدرس نتعلم كيف تقدم نفسك للآخرين باستخدام أفعال الكينونة البسيطة.", examples: ["Hello, my name is Diana.", "I am a student.", "Nice to meet you!"], words: [{w: "Hello", m: "مرحباً"}, {w: "Name", m: "اسم"}, {w: "Student", m: "طالب/طالبة"}] },
+                    { id: "A2", title: "المستوى فوق المبتدئ (A2) - الروتين اليومي", text: "هنا نستخدم زمن المضارع البسيط للتعبير عن العادات والأفعال المتكررة كل يوم.", examples: ["I wake up early.", "She drinks coffee every morning.", "They study at night."], words: [{w: "Wake up", m: "يستيقظ"}, {w: "Early", m: "مبكراً"}, {w: "Every day", m: "كل يوم"}] },
+                    { id: "B1", title: "المستوى المتوسط (B1) - التخطيط للمستقبل", text: "استخدام زمن المستقبل للتعبير عن الخطط الطموحة والنوايا القادمة.", examples: ["I am going to travel next month.", "I will design a website.", "We hope to succeed."], words: [{w: "Travel", m: "يسافر"}, {w: "Next month", m: "الشهر القادم"}, {w: "Design", m: "يصمم"}] }
+                ],
+                videos: ["https://www.youtube.com/embed/tgbNymZ7vqY", "https://www.youtube.com/embed/dQw4w9WgXcQ"],
+                quiz: [
+                    { q: "ما معنى كلمة 'Student'؟", o: ["طبيب", "مهندس", "طالب"], a: 2 },
+                    { q: "اختر الجملة الصحيحة للروتين اليومي:", o: ["I am wake up early.", "I wake up early.", "I waking up early."], a: 1 }
+                ]
+            },
+            arabic: {
+                title: "اللغة العربية",
+                flag: "🇸🇦",
+                levels: [
+                    { id: "A1", title: "المستوى الأول (A1) - الجملة الاسمية", text: "تتكون الجملة الاسمية في لغتنا الجميلة من ركنين أساسيين هما المبتدأ والخبر، وكلاهما مرفوع.", examples: ["العِلمُ نورٌ.", "المدرسةُ جميلةٌ.", "الطالبُ مجتهدٌ."], words: [{w: "العلم", m: "Knowledge"}, {w: "نور", m: "Light"}, {w: "مجتهد", m: "Diligent"}] },
+                    { id: "A2", title: "المستوى الثاني (A2) - الجملة الفعلية", text: "تبدأ الجملة الفعلية بفعل وتتكون من (فعل، وفاعل، ومفعول به إذا كان الفعل متعدياً).", examples: ["شربَ الطفلُ الحليبَ.", "كتبتْ ديانا الدرسَ.", "قرأَ المعلمُ كتاباً."], words: [{w: "شرب", m: "Drank"}, {w: "كتب", m: "Wrote"}, {w: "الدرس", m: "The lesson"}] },
+                    { id: "B1", title: "المستوى المتقدم (B1) - كان وأخواتها", text: "أفعال ناسخة تدخل على الجملة الاسمية، فترفع المبتدأ ويسمى اسمها، وتنصب الخبر ويسمى خبرها.", examples: ["كانَ الجوُّ جميلاً.", "أصبحَ الطالبُ متفوقاً."], words: [{w: "كان", m: "Was"}, {w: "أصبح", m: "Became"}, {w: "جميل", m: "Beautiful"}] }
+                ],
+                videos: ["https://www.youtube.com/embed/tgbNymZ7vqY"],
+                quiz: [
+                    { q: "ما هما ركنا الجملة الاسمية؟", o: ["فعل وفاعل", "مبتدأ وخبر", "جار ومجرور"], a: 1 },
+                    { q: "إعراب الخبر في الجملة الاسمية العادية يكون دائماً:", o: ["منصوب", "مجرور", "مرفوع"], a: 2 }
+                ]
+            },
+            italian: {
+                title: "اللغة الإيطالية",
+                flag: "🇮🇹",
+                levels: [
+                    { id: "A1", title: "المستوى (A1) - التحيات الإيطالية", text: "التعرف على الكلمات الأساسية المستخدمة للترحيب والوداع باللغة الإيطالية في أي وقت.", examples: ["Ciao! (مرحباً/وداعاً)", "Buongiorno (صباح الخير)", "Grazie mille (شكراً جزيلاً)"], words: [{w: "Ciao", m: "مرحباً"}, {w: "Grazie", m: "شكراً"}, {w: "Prego", m: "عفواً"}] },
+                    { id: "A2", title: "المستوى (A2) - تقديم العائلة", text: "كيفية الحديث عن أفراد عائلتك ووصفهم باستخدام أدوات الملكية البسيطة.", examples: ["Mia madre è felice.", "Mio padre lavora qui.", "Questo è mio fratello."], words: [{w: "Madre", m: "أم"}, {w: "Padre", m: "أب"}, {w: "Fratello", m: "أخ"}] },
+                    { id: "B1", title: "المستوى (B1) - في المطعم الإيطالي", text: "تعابير وجمل مفيدة لطلب الطعام الإيطالي الشهير ومناقشة الحساب.", examples: ["Vorrei una pizza Margherita.", "Il conto, per favore.", "È delizioso!"], words: [{w: "Vorrei", m: "أود / أريد"}, {w: "Conto", m: "الحساب"}, {w: "Delizioso", m: "لذيذ"}] }
+                ],
+                videos: ["https://www.youtube.com/embed/tgbNymZ7vqY"],
+                quiz: [
+                    { q: "ماذا تعني 'Buongiorno' بالإيطالية؟", o: ["مساء الخير", "صباح الخير", "تصبح على خير"], a: 1 },
+                    { q: "كيف تطلب الحساب في المطعم؟", o: ["Il conto, per favore", "Grazie mille", "Ciao ciao"], a: 0 }
+                ]
+            },
+            french: {
+                title: "اللغة الفرنسية",
+                flag: "🇫🇷",
+                levels: [
+                    { id: "A1", title: "المستوى (A1) - أساسيات اللقاء", text: "تعلم التحيات البسيطة والأساسية في المحادثات الفرنسية اليومية الرسمية والودية.", examples: ["Bonjour! (صباح الخير)", "Comment ça va? (كيف حالك؟)", "Ça va bien, merci."], words: [{w: "Bonjour", m: "صباح الخير/مرحباً"}, {w: "Merci", m: "شكراً"}, {w: "S'il vous plaît", m: "من فضلك"}] },
+                    { id: "A2", title: "المستوى (A2) - الألوان والملابس", text: "كيفية وصف الألوان المختلفة وقطع الملابس التي ترتديها وتنسيقها بالجمل.", examples: ["J'aime la chemise bleue.", "Elle porte une robe rouge.", "Ce sac est noir."], words: [{w: "Bleue", m: "أزرق"}, {w: "Rouge", m: "أحمر"}, {w: "Robe", m: "فستان"}] },
+                    { id: "B1", title: "المستوى (B1) - الحديث عن الهوايات", text: "التعبير عن الأنشطة المفضلة والرياضات التي تمارسها في وقت فراغك بالفرنسية.", examples: ["Je joue au football le weekend.", "J'aime lire des livres.", "Ma passion est le dessin."], words: [{w: "Lire", m: "القراءة"}, {w: "Dessin", m: "الرسم"}, {w: "Weekend", m: "عطلة نهاية الأسبوع"}] }
+                ],
+                videos: ["https://www.youtube.com/embed/tgbNymZ7vqY"],
+                quiz: [
+                    { q: "ما معنى اللون 'Rouge' بالفرنسية؟", o: ["أزرق", "أخضر", "أحمر"], a: 2 },
+                    { q: "كيف تقول 'شكراً' بالفرنسية؟", o: ["Merci", "Bonjour", "S'il vous plaît"], a: 0 }
+                ]
+            }
+        };
+
+        let currentLanguage = '';
+
+        // الدالة المسؤولة عن التنقل بين الصفحات الرئيسية والفرعية للغات
+        function showPage(pageId) {
+            if(pageId === 'home') {
+                document.getElementById('home-page').classList.remove('hidden');
+                document.getElementById('language-page').classList.add('hidden');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else {
+                document.getElementById('home-page').classList.add('hidden');
+                document.getElementById('language-page').classList.remove('hidden');
+            }
+        }
+
+        // الدالة المسؤولة عن بناء محتوى اللغة المختارة بالكامل وتجهيز الأقسام
+        function openLanguage(langKey) {
+            currentLanguage = langKey;
+            const data = languageData[langKey];
+            
+            // تحديث العناوين والأعلام بالصفحة
+            document.getElementById('lang-title').innerText = data.title;
+            document.getElementById('lang-flag').innerText = data.flag;
+
+            // 1. بناء قسم شرح الدروس (المستويات)
+            const lessonsContainer = document.getElementById('tab-lessons');
+            lessonsContainer.innerHTML = '';
+            data.levels.forEach(lvl => {
+                let examplesHtml = lvl.examples.map(ex => `<li class="text-indigo-900 bg-indigo-50/50 px-3 py-1.5 rounded-lg border-r-4 border-indigo-500 font-mono text-left" dir="ltr">${ex}</li>`).join('');
+                let wordsHtml = lvl.words.map(w => `<tr class="border-b border-gray-100 hover:bg-gray-50/50"><td class="py-2.5 px-4 font-semibold text-indigo-700">${w.w}</td><td class="py-2.5 px-4 text-gray-600">${w.m}</td></tr>`).join('');
+                
+                lessonsContainer.innerHTML += `
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full mb-3">${lvl.id}</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">${lvl.title}</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">${lvl.text}</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-3 flex items-center gap-1">💡 أمثلة تطبيقية:</h4>
+                                <ul class="space-y-2">${examplesHtml}</ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-3 flex items-center gap-1">📖 جدول الكلمات الحفظ:</h4>
+                                <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                                    <table class="w-full text-right border-collapse">
+                                        <thead class="bg-gray-50 text-gray-700 font-bold text-sm">
+                                            <tr><th class="py-2 px-4">الكلمة</th><th class="py-2 px-4">المعنى</th></tr>
+                                        </thead>
+                                        <tbody>${wordsHtml}</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // 2. بناء قسم الفيديوهات توديع روابط اليوتيوب بأمان داخل IFRAME
+            const videosContainer = document.getElementById('videos-container');
+            videosContainer.innerHTML = '';
+            data.videos.forEach(videoUrl => {
+                videosContainer.innerHTML += `
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-inner">
+                            <iframe class="w-full h-64 md:h-80" src="${videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // 3. بناء وتجهيز أسئلة الكويز التفاعلي للغة
+            initQuiz(data.quiz);
+
+            // افتراضياً، نفتح علامة تبويب "شرح المادة" عند دخول الصفحة
+            switchTab('lessons');
+            showPage('language');
+        }
+
+        // دالة التبديل السلس بين الأقسام الثلاثة داخل اللغة بدون تحميل
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+
+            const buttons = ['lessons', 'videos', 'quiz'];
+            buttons.forEach(btn => {
+                const btnEl = document.getElementById(`tab-btn-${btn}`);
+                if(btn === tabName) {
+                    btnEl.className = "flex-1 py-3 text-center rounded-lg font-bold text-sm sm:text-base transition-all bg-indigo-600 text-white shadow-sm";
+                } else {
+                    btnEl.className = "flex-1 py-3 text-center rounded-lg font-bold text-sm sm:text-base text-gray-600 hover:bg-gray-50 transition-all";
+                }
+            });
+        }
+
+        // نظام الكويز التفاعلي المخصص لكل لغة
+        let activeQuizQuestions = [];
+        function initQuiz(questions) {
+            activeQuizQuestions = questions;
+            const container = document.getElementById('quiz-container');
+            const resultBox = document.getElementById('quiz-result');
+            
+            resultBox.classList.add('hidden');
+            container.classList.remove('hidden');
+            container.innerHTML = '<h3 class="text-xl font-bold mb-6 text-gray-800 text-center border-b pb-4">اختبر معلوماتك الآن!</h3>';
+
+            questions.forEach((qData, qIndex) => {
+                let optionsHtml = qData.o.map((option, oIndex) => `
+                    <label class="flex items-center gap-3 p-3.5 rounded-xl border border-gray-200 hover:bg-indigo-50/50 cursor-pointer transition">
+                        <input type="radio" name="question-${qIndex}" value="${oIndex}" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                        <span class="text-gray-700 text-sm md:text-base font-medium">${option}</span>
+                    </label>
+                `).join('');
+
+                container.innerHTML += `
+                    <div class="mb-8 p-4 md:p-6 bg-gray-50 rounded-xl border border-gray-100">
+                        <p class="font-bold text-gray-800 mb-4 text-base md:text-lg">${qIndex + 1}. ${qData.q}</p>
+                        <div class="grid grid-cols-1 gap-3">${optionsHtml}</div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML += `
+                <button onclick="submitQuiz()" class="w-full mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    إرسال الإجابات ومعرفة النتيجة
+                </button>
+            `;
+        }
+
+        // حساب وإظهار نتيجة الكويز فوراً للمستخدم بشكل تفاعلي
+        function submitQuiz() {
+            let score = 0;
+            let answeredCount = 0;
+
+            activeQuizQuestions.forEach((qData, qIndex) => {
+                const selected = document.querySelector(`input[name="question-${qIndex}"]:checked`);
+                if(selected) {
+                    answeredCount++;
+                    if(parseInt(selected.value) === qData.a) {
+                        score++;
+                    }
+                }
+            });
+
+            if(answeredCount < activeQuizQuestions.length) {
+                alert("برجاء الإجابة على جميع الأسئلة أولاً قبل العرض!");
+                return;
+            }
+
+            const container = document.getElementById('quiz-container');
+            const resultBox = document.getElementById('quiz-result');
+
+            container.classList.add('hidden');
+            resultBox.classList.remove('hidden');
+
+            let message = score === activeQuizQuestions.length ? "ممتاز جداً! إجابة كاملة صحيحة 🌟" : "أداء جيد! يمكنك مراجعة الدرس والمحاولة مجدداً 👍";
+
+            resultBox.innerHTML = `
+                <div class="text-5xl mb-4">🏆</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">نتيجتك هي: ${score} من ${activeQuizQuestions.length}</h3>
+                <p class="text-gray-600 font-medium mb-6">${message}</p>
+                <button onclick="openLanguage('${currentLanguage}')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-6 rounded-xl transition">
+                    إعادة الاختبار 🔄
+                </button>
+            `;
+        }
+    </script>
+</body>
+</html>
